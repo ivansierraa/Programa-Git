@@ -1,0 +1,65 @@
+/*Motores JEY - Estilos base
+   Reglas generales que aplican a todas las pantallas.*/
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente);
+    font-size: var(--texto-normal);
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 var(--espacio-m);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: var(--texto-titulo);
+}
+
+    img
+    svg{
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+a {
+    color: var(--color-texto-acento);
+}
+
+button,
+input,
+select,
+textarea{
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+::placeholder{
+    color: var(--color-placeholder);
+    opacity: 1;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-texto);
+    outline-offset: 2px;
+}

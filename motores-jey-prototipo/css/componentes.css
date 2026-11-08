@@ -1,0 +1,177 @@
+/* ==========================================================
+   Motores JEY - Componentes reutilizables
+   Piezas que se repiten en varias pantallas.
+   ========================================================== */
+
+/* ---------- Iconos ---------- */
+.icono {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+}
+
+.icono--grande {
+  width: 56px;
+  height: 56px;
+}
+
+/* ---------- Botón de alertas (campana) ---------- */
+.boton-alertas {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-acento);
+  font-size: var(--texto-grande);
+}
+
+/* ---------- Accesos rápidos ---------- */
+.accesos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-m);
+  max-width: 360px;
+  margin: var(--espacio-xl) auto 0;
+}
+
+.tarjeta-acceso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-m);
+  min-height: 200px;
+  padding: var(--espacio-m) var(--espacio-s);
+  border: var(--borde-delgado);
+  border-radius: var(--radio);
+  color: var(--color-texto-acento);
+  font-size: var(--texto-pequeno);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tarjeta-acceso:hover {
+  background-color: var(--color-acento);
+  color: var(--color-texto-sobre-acento);
+}
+
+@media (min-width: 768px) {
+  .accesos {
+    max-width: 600px;
+  }
+
+  .tarjeta-acceso {
+    font-size: var(--texto-normal);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta-acceso {
+    transition: none;
+  }
+}
+
+/* ---------- Formularios ---------- */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.campo__etiqueta {
+  font-size: var(--texto-grande);
+}
+
+.campo__grupo {
+  position: relative;
+}
+
+.campo__control {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--espacio-s) 48px;
+  border: 2px solid transparent;
+  border-radius: var(--radio);
+  background-color: var(--color-acento);
+  color: var(--color-texto-sobre-acento);
+  text-align: center;
+}
+
+.campo__control[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.campo__boton-ver {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-texto-sobre-acento);
+}
+
+.campo__error {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--color-error);
+  font-size: var(--texto-pequeno);
+}
+
+.campo__enlace {
+  align-self: flex-end;
+  padding: 0 var(--espacio-s);
+  border: 1px solid var(--color-texto);
+  border-radius: var(--radio);
+  color: var(--color-texto);
+  font-size: var(--texto-pequeno);
+  text-decoration: none;
+}
+
+.casilla {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.casilla input {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  accent-color: var(--color-acento);
+}
+
+/* ---------- Botón principal ---------- */
+.boton-primario {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--espacio-s) var(--espacio-m);
+  border: none;
+  border-radius: var(--radio);
+  background-color: var(--color-acento);
+  color: var(--color-texto-sobre-acento);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton-primario:hover {
+  background-color: var(--color-texto-acento);
+}

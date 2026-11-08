@@ -1,0 +1,203 @@
+/* ==========================================================
+   Motores JEY - Distribución (layout)
+   Encabezado, menú lateral, contenido y pie.
+   ========================================================== */
+
+/* ---------- Página completa ---------- */
+.pagina {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contenido {
+  flex: 1;
+  padding: var(--espacio-l) var(--espacio-m);
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+  padding: var(--espacio-l) var(--espacio-m) 0;
+}
+
+.encabezado__logo {
+  margin-left: auto;
+}
+
+.encabezado__barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: var(--espacio-l);
+}
+
+.boton-menu {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: var(--radio);
+  background-color: var(--color-acento);
+  color: var(--color-texto-sobre-acento);
+  font-size: var(--texto-grande);
+  font-weight: bold;
+}
+
+.encabezado__usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--espacio-s);
+}
+
+.encabezado__fila {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.tarjeta-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: 1px solid var(--color-texto);
+  border-radius: var(--radio);
+  line-height: 1.2;
+}
+
+.tarjeta-usuario__rol {
+  color: var(--color-texto-acento);
+  font-size: var(--texto-pequeno);
+}
+
+.boton-salir {
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: var(--borde-delgado);
+  border-radius: var(--radio);
+  font-size: var(--texto-pequeno);
+  text-decoration: none;
+}
+
+/* ---------- Menú lateral ---------- */
+.menu-lateral {
+  position: fixed;
+  top: 112px;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  width: min(80%, 320px);
+  padding: var(--espacio-l);
+  overflow-y: auto;
+  background-color: var(--color-fondo);
+  border: 3px solid var(--color-acento);
+  border-left: none;
+  border-radius: 0 40px 40px 0;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s 0.3s;
+}
+
+.menu-lateral--abierto {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.3s ease, visibility 0s;
+}
+
+.menu-lateral__logo {
+  margin-bottom: var(--espacio-l);
+}
+
+.menu-lateral__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-lateral__lista a {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  min-height: 44px;
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+.menu-lateral__lista a:hover {
+  color: var(--color-texto-acento);
+}
+
+.fondo-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  padding: var(--espacio-l) var(--espacio-m);
+}
+
+/* ---------- Utilidades ---------- */
+.oculto-visual {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Preferencias del usuario ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .menu-lateral {
+    transition: none;
+  }
+}
+
+/* ---------- Pantallas grandes ---------- */
+@media (min-width: 1024px) {
+  .encabezado,
+  .contenido,
+  .pie {
+    width: 100%;
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Pantallas de acceso (login y error) ---------- */
+.login,
+.mensaje-pantalla {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--espacio-xl);
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.login__titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--espacio-s);
+}
+
+.mensaje-pantalla {
+  align-items: center;
+  text-align: center;
+}
+
+.mensaje-pantalla h1 {
+  font-size: var(--texto-grande);
+}
+
+.mensaje-pantalla__icono {
+  width: 160px;
+  height: 160px;
+  color: var(--color-acento);
+}

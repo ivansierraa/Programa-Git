@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | Motores JEY</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <script src="js/login.js" defer></script>
+</head>
+<body class="pagina">
+
+  <main class="contenido login">
+    <h1 class="login__titulo">
+      Bienvenido a
+      <img src="img/logo-blanco.svg" alt="Motores JEY" width="200">
+    </h1>
+
+    <form class="formulario" id="form-login" novalidate>
+      <div class="campo">
+        <label class="campo__etiqueta" for="usuario">Usuario</label>
+        <input class="campo__control" id="usuario" name="usuario" type="text"
+               placeholder="Ingresa tu usuario" autocomplete="username"
+               required aria-describedby="usuario-error">
+        <p class="campo__error" id="usuario-error"></p>
+      </div>
+
+      <div class="campo">
+        <label class="campo__etiqueta" for="clave">Contraseña</label>
+        <div class="campo__grupo">
+          <input class="campo__control" id="clave" name="clave" type="password"
+                 placeholder="Ingresa tu contraseña" autocomplete="current-password"
+                 required aria-describedby="clave-error">
+          <button class="campo__boton-ver" id="ver-clave" type="button"
+                  aria-label="Mostrar contraseña" aria-pressed="false">
+            <svg class="icono" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <!-- paths del ojo de Figma, con fill="currentColor" -->
+            </svg>
+          </button>
+        </div>
+        <p class="campo__error" id="clave-error"></p>
+        <a class="campo__enlace" href="#">¿La olvidaste?</a>
+      </div>
+
+      <label class="casilla">
+        <input type="checkbox" id="recordar" name="recordar">
+        Recordar usuario
+      </label>
+
+      <button class="boton-primario" type="submit">Iniciar Sesión</button>
+    </form>
+  </main>
+
+  <footer class="pie">
+    <img src="img/logo-naranja.svg" alt="" width="400">
+  </footer>
+
+</body>
+</html>

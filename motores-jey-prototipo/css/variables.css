@@ -1,0 +1,31 @@
+/*===Motores JEY - Variables de diseño. Toda la paleta, tipografía y medidas están aquí.====*/
+:root{
+    /*-----colores de marca------*/
+    --color-fondo: #0f3c59;
+    --color-acento: #f36b05;
+    --color-error: #FFA3A3;
+
+    /*-----colores de texto------*/
+    --color-texto: #ffffff;
+    --color-texto-acento: #ff8a2b;
+    --color-texto-sobre-acento: #0a2638;
+    --color-placeholder: #4a1e00;
+
+    /*-----tipografia------*/
+    --fuente: sistem-ui, -apple-system, "Segoe UI", Roboto, Arial, Sans-serif;
+    --texto-pequeno: 14px;
+    --texto-normal: 16px;
+    --texto-grande: 20px;
+    --texto-titulo: 32px;
+
+    /*-----espacios------*/
+    --espacio-xs: 4px;
+    --espacio-s: 8px;
+    --espacio-m: 16px;
+    --espacio-l: 24px;
+    --espacio-xl: 32px;
+
+    /*-----bordes------*/
+    --radio: 8px;
+    --borde-delgado: 1px solid var var(--color-acento);
+}
